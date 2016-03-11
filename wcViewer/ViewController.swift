@@ -112,7 +112,7 @@ class ViewController: UIViewController {
 }
 
 
-extension ViewController {
+extension ViewController: UICollectionViewDataSource {
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return showArray.count
@@ -130,6 +130,22 @@ extension ViewController {
 //        cell.backgroundColor = UIColor.whiteColor()
         return cell
     }
+
+}
+
+extension ViewController: UICollectionViewDelegate {
+
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let item = showArray[indexPath.item]
+        if let name = item["name"] {
+            let alertController = UIAlertController(title: name, message:
+                nil, preferredStyle: UIAlertControllerStyle.Alert)
+            alertController.addAction(UIAlertAction(title: "Watch Now", style: UIAlertActionStyle.Default,handler: nil))
+            
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
+    }
+
 }
 
 extension ViewController: LayoutDelegate {
