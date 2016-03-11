@@ -137,7 +137,6 @@ extension ViewController: UICollectionViewDataSource {
         } else {
             cell.image = nil
         }
-//        cell.backgroundColor = UIColor.whiteColor()
         return cell
     }
 
@@ -174,15 +173,8 @@ extension ViewController: LayoutDelegate {
 
 //    func collectionView(collectionView: UICollectionView,
 //        layout collectionViewLayout: UICollectionViewLayout,
-//        sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+//        insetForSectionAtIndex section: Int) -> UIEdgeInsets {
 //            
-//            return CGSize(width: 100, height: 100)
+//            return sectionInsets
 //    }
-//
-    func collectionView(collectionView: UICollectionView,
-        layout collectionViewLayout: UICollectionViewLayout,
-        insetForSectionAtIndex section: Int) -> UIEdgeInsets {
-            
-            return sectionInsets
-    }
 }

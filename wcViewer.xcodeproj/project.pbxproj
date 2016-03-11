@@ -16,7 +16,6 @@
 		A9AFAB721C8F756C00808657 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AFAB711C8F756C00808657 /* ImageCell.swift */; };
 		A9AFAB761C8F7AC700808657 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AFAB751C8F7AC700808657 /* Layout.swift */; };
 		A9AFAB781C8F804700808657 /* shows.json in Resources */ = {isa = PBXBuildFile; fileRef = A9AFAB771C8F804700808657 /* shows.json */; };
-		A9AFAB861C91D7A000808657 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AFAB851C91D7A000808657 /* Network.swift */; };
 		D08847EED0C716D00A798963 /* Pods_wcViewerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F4CBBDFCC958DE250FBFCC /* Pods_wcViewerTests.framework */; };
 		F2A90E888D4565F75825ED8A /* Pods_wcViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6CFA9F0E2DBEB0F7155F862 /* Pods_wcViewer.framework */; };
 /* End PBXBuildFile section */
@@ -49,7 +48,6 @@
 		A9AFAB711C8F756C00808657 /* ImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		A9AFAB751C8F7AC700808657 /* Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
 		A9AFAB771C8F804700808657 /* shows.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = shows.json; sourceTree = "<group>"; };
-		A9AFAB851C91D7A000808657 /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		A9AFAB8A1C929C0B00808657 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C1AA846DE7864AEC0DDD0813 /* Pods-wcViewerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wcViewerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-wcViewerTests/Pods-wcViewerTests.release.xcconfig"; sourceTree = "<group>"; };
 		C879A79E77B36DD6D8E41231 /* Pods-wcViewerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wcViewerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wcViewerTests/Pods-wcViewerTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -123,7 +121,6 @@
 				A9AFAB531C8F718100808657 /* ViewController.swift */,
 				A9AFAB751C8F7AC700808657 /* Layout.swift */,
 				A9AFAB711C8F756C00808657 /* ImageCell.swift */,
-				A9AFAB851C91D7A000808657 /* Network.swift */,
 				A9AFAB771C8F804700808657 /* shows.json */,
 				A9AFAB551C8F718100808657 /* Main.storyboard */,
 				A9AFAB581C8F718100808657 /* Assets.xcassets */,
@@ -344,7 +341,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9AFAB541C8F718100808657 /* ViewController.swift in Sources */,
-				A9AFAB861C91D7A000808657 /* Network.swift in Sources */,
 				A9AFAB761C8F7AC700808657 /* Layout.swift in Sources */,
 				A9AFAB521C8F718100808657 /* AppDelegate.swift in Sources */,
 				A9AFAB721C8F756C00808657 /* ImageCell.swift in Sources */,

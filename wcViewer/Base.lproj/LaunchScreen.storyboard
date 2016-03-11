@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="WhipClip Test" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U3g-hX-17C">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WhipClip Test" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U3g-hX-17C">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -25,6 +25,12 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="U3g-hX-17C" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="7A2-rK-IAb"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="U3g-hX-17C" secondAttribute="bottom" id="NyJ-9s-ysp"/>
+                            <constraint firstItem="U3g-hX-17C" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="w0G-MJ-SNd"/>
+                            <constraint firstAttribute="trailing" secondItem="U3g-hX-17C" secondAttribute="trailing" id="ybA-K6-2EN"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="UZW-gs-ZPm"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>

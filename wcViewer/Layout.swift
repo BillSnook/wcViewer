@@ -13,8 +13,6 @@ protocol LayoutDelegate {
     func collectionView(collectionView:UICollectionView, heightForPhotoAtIndexPath indexPath:NSIndexPath,
         withWidth:CGFloat) -> CGFloat
 
-//    func collectionView(collectionView: UICollectionView,
-//        heightForAnnotationAtIndexPath indexPath: NSIndexPath, withWidth width: CGFloat) -> CGFloat
 }
 
 class Layout: UICollectionViewLayout {
@@ -35,46 +33,41 @@ class Layout: UICollectionViewLayout {
     // CollectionView Layout delegate
     override func prepareLayout() {
 
-//        if cache.isEmpty {
-            cache.removeAll()
+		cache.removeAll()
 
-            let hattributes = self.layoutAttributesForSupplementaryViewOfKind(UICollectionElementKindSectionHeader, atIndexPath: NSIndexPath(forItem: 0, inSection: 0))
-            cache.append(hattributes!)
+		let columnWidth = contentWidth / CGFloat(numberOfColumns)
+		var xOffset = [CGFloat]()
+		for column in 0 ..< numberOfColumns {
+			xOffset.append(CGFloat(column) * columnWidth )
+		}
+		var column = 0
+		var yOffset = [CGFloat](count: numberOfColumns, repeatedValue: 0)
 
-            let columnWidth = contentWidth / CGFloat(numberOfColumns)
-            var xOffset = [CGFloat]()
-            for column in 0 ..< numberOfColumns {
-                xOffset.append(CGFloat(column) * columnWidth )
-            }
-            var column = 0
-            var yOffset = [CGFloat](count: numberOfColumns, repeatedValue: 0)
+		var offset = true
+		for item in 0 ..< collectionView!.numberOfItemsInSection(0) {
+			
+			let indexPath = NSIndexPath(forItem: item, inSection: 0)
 
-            var offset = true
-            for item in 0 ..< collectionView!.numberOfItemsInSection(0) {
-                
-                let indexPath = NSIndexPath(forItem: item, inSection: 0)
+			let width = columnWidth - cellPadding * 2
+			let photoHeight = delegate.collectionView(collectionView!, heightForPhotoAtIndexPath: indexPath,
+				withWidth:width)
+			let height = cellPadding +  photoHeight + cellPadding
+			if offset && ( column == 1 ) {
+				offset = false
+				yOffset[column] = height / 2.0
+			}
+			let frame = CGRect(x: xOffset[column], y: yOffset[column], width: columnWidth, height: height)
+			let insetFrame = CGRectInset(frame, cellPadding, cellPadding)
 
-                let width = columnWidth - cellPadding * 2
-                let photoHeight = delegate.collectionView(collectionView!, heightForPhotoAtIndexPath: indexPath,
-                    withWidth:width)
-                let height = cellPadding +  photoHeight + cellPadding
-                if offset && ( column == 1 ) {
-                    offset = false
-                    yOffset[column] = height / 2.0
-                }
-                let frame = CGRect(x: xOffset[column], y: yOffset[column], width: columnWidth, height: height)
-                let insetFrame = CGRectInset(frame, cellPadding, cellPadding)
+			let attributes = UICollectionViewLayoutAttributes(forCellWithIndexPath: indexPath)
+			attributes.frame = insetFrame
+			cache.append(attributes)
 
-                let attributes = UICollectionViewLayoutAttributes(forCellWithIndexPath: indexPath)
-                attributes.frame = insetFrame
-                cache.append(attributes)
+			contentHeight = max(contentHeight, CGRectGetMaxY(frame))
+			yOffset[column] = yOffset[column] + height
 
-                contentHeight = max(contentHeight, CGRectGetMaxY(frame))
-                yOffset[column] = yOffset[column] + height
-
-                column = column >= (numberOfColumns - 1) ? 0 : ++column
-            }
-//        }
+			column = column >= (numberOfColumns - 1) ? 0 : ++column
+		}
     }
     
     override func collectionViewContentSize() -> CGSize {
@@ -91,13 +84,6 @@ class Layout: UICollectionViewLayout {
             }
         }
         return layoutAttributes
-    }
-
-    override func layoutAttributesForSupplementaryViewOfKind(elementKind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionViewLayoutAttributes? {
-        let attributes = UICollectionViewLayoutAttributes(forSupplementaryViewOfKind: elementKind, withIndexPath: indexPath)
-        attributes.frame = CGRect(x: 0, y: 0, width: 320, height: 44)
-        
-        return attributes
     }
 
 }

@@ -11,7 +11,6 @@ import UIKit
 class ImageCell: UICollectionViewCell {
     
     @IBOutlet private weak var imageView: UIImageView!
-//    @IBOutlet private weak var imageViewHeightLayoutConstraint: NSLayoutConstraint!
 
     var image: UIImage? {
         didSet {
@@ -20,6 +19,5 @@ class ImageCell: UICollectionViewCell {
             }
         }
     }
-    
     
 }
