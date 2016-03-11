@@ -44,6 +44,7 @@ class Layout: UICollectionViewLayout {
 		var yOffset = [CGFloat](count: numberOfColumns, repeatedValue: 0)
 
 		var offset = true
+		contentHeight = 0.0
 		for item in 0 ..< collectionView!.numberOfItemsInSection(0) {
 			
 			let indexPath = NSIndexPath(forItem: item, inSection: 0)
