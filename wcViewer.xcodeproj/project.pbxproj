@@ -50,7 +50,7 @@
 		A9AFAB751C8F7AC700808657 /* Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
 		A9AFAB771C8F804700808657 /* shows.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = shows.json; sourceTree = "<group>"; };
 		A9AFAB851C91D7A000808657 /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
-		A9AFAB8A1C929C0B00808657 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = wcViewer/README.md; sourceTree = "<group>"; };
+		A9AFAB8A1C929C0B00808657 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C1AA846DE7864AEC0DDD0813 /* Pods-wcViewerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wcViewerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-wcViewerTests/Pods-wcViewerTests.release.xcconfig"; sourceTree = "<group>"; };
 		C879A79E77B36DD6D8E41231 /* Pods-wcViewerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wcViewerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wcViewerTests/Pods-wcViewerTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
