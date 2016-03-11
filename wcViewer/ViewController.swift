@@ -10,27 +10,25 @@ import UIKit
 import AVFoundation
 
 
-class ViewController: UICollectionViewController {
+class ViewController: UIViewController {
 
     private let reuseIdentifier = "ImageCell"
-    private let sectionInsets = UIEdgeInsets(top: 64.0, left: 5.0, bottom: 5.0, right: 5.0)
+    private let sectionInsets = UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0)
     private let downloadQueue = dispatch_queue_create("com.test.wcViewer",nil)
+    
+    @IBOutlet weak var collectionView: UICollectionView!
 
-//    var images = Image.allImages()
     var showArray = Array<Dictionary<String,String>>()
 
     let imageCache = NSCache()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
         if let layout = collectionView?.collectionViewLayout as? Layout {
             layout.delegate = self
         }
         collectionView?.contentInset = sectionInsets
-//        collectionView?.registerClass(CustomHeaderView.self, forCellWithReuseIdentifier: "HeaderCell")
-        collectionView?.registerClass(CustomHeaderView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "HeaderCell")
         
         if let URL = NSBundle.mainBundle().URLForResource("shows", withExtension: "json") {
             if let jsonData = NSData(contentsOfURL: URL) {
@@ -45,6 +43,10 @@ class ViewController: UICollectionViewController {
 
     }
 
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .LightContent
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -112,11 +114,11 @@ class ViewController: UICollectionViewController {
 
 extension ViewController {
     
-    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return showArray.count
     }
     
-    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! ImageCell
         let item = showArray[indexPath.item]
         if let image = imageCache.objectForKey( item["name"]! ) {
@@ -127,15 +129,6 @@ extension ViewController {
         }
 //        cell.backgroundColor = UIColor.whiteColor()
         return cell
-    }
-    
-    override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
-//        if kind == UICollectionElementKindSectionHeader {
-            let cell = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "HeaderCell", forIndexPath: indexPath) as UICollectionReusableView
-            cell.backgroundColor = UIColor.orangeColor()
-            cell.frame = CGRect(x: 0.0, y: 0.0, width: collectionView.frame.size.width, height: 44.0)
-            return cell
-//        }
     }
 }
 
