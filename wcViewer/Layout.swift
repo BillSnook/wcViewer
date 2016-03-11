@@ -35,7 +35,8 @@ class Layout: UICollectionViewLayout {
     // CollectionView Layout delegate
     override func prepareLayout() {
 
-        if cache.isEmpty {
+//        if cache.isEmpty {
+            cache.removeAll()
 
             let hattributes = self.layoutAttributesForSupplementaryViewOfKind(UICollectionElementKindSectionHeader, atIndexPath: NSIndexPath(forItem: 0, inSection: 0))
             cache.append(hattributes!)
@@ -73,7 +74,7 @@ class Layout: UICollectionViewLayout {
 
                 column = column >= (numberOfColumns - 1) ? 0 : ++column
             }
-        }
+//        }
     }
     
     override func collectionViewContentSize() -> CGSize {

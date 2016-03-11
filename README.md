@@ -27,6 +27,7 @@ UX:
 ## Requirements
 
 - iOS 8.0+
+- iPhone 5 or 6
 
 
 ### CocoaPods
